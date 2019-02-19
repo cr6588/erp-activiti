@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+ProcessEngine <span th:text="${processEngine.name}"></span> <br/>
+Version <span th:text="${processEngine.VERSION}"></span><br/>
+process id<span th:text="${processInstance.processInstanceId}"></span><br/>
+process key<span th:text="${processInstance.processDefinitionKey}"></span><br/>
+<form action="/onboarding">
+<table>
+    <input type="hidden"  name="processId" th:value="${processInstance.processInstanceId}"/>
+    <tr th:each="fp : ${formProperties}">
+        <td th:text="${fp.name}"> </td>
+        <td><input type="text" th:name="${fp.name}" /></td>
+    </tr>
+</table>
+
+</form>
+</body>
+</html>
