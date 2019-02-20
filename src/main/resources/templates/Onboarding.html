@@ -4,19 +4,22 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div th:if="${processInstance != null}">
 ProcessEngine <span th:text="${processEngine.name}"></span> <br/>
 Version <span th:text="${processEngine.VERSION}"></span><br/>
 process id<span th:text="${processInstance.processInstanceId}"></span><br/>
 process key<span th:text="${processInstance.processDefinitionKey}"></span><br/>
-<form action="/onboarding">
+<form action="/onboarding" method="post" th:if="${formProperties != null}">
 <table>
     <input type="hidden"  name="processId" th:value="${processInstance.processInstanceId}"/>
     <tr th:each="fp : ${formProperties}">
         <td th:text="${fp.name}"> </td>
-        <td><input type="text" th:name="${fp.name}" /></td>
+        <td><input type="text" th:name="${fp.id}" /></td>
     </tr>
+    <input type="submit" value="提交"/>
 </table>
 
 </form>
+</div>
 </body>
 </html>
