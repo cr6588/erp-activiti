@@ -12,7 +12,7 @@
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
         <!-- error: 对实体 "characterEncoding" 的引用必须以 ';' 分隔符结尾。 &后加amp; -->
-        <property name="url" value="jdbc:mysql://user.mysql.jtongi.cn/activiti?useUnicode=true&amp;characterEncoding=utf-8" />
+        <property name="url" value="jdbc:mysql://127.0.0.1/activiti?useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true" />
         <property name="username" value="root" />
         <property name="password" value="tTdAdf212" />
         <!-- 配置初始化大小、最小、最大 -->
