@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
+        //渠道
         SpringApplication.run(Application.class, args);
     }
 
